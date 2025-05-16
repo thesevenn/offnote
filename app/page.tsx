@@ -1,12 +1,10 @@
-"use client";
-import Notes from "@/components/notes";
-import {DBProvider} from "@/contexts/db-context";
+import {redirect} from "next/navigation";
+
 export default function Home() {
+	redirect("/notes");
 	return (
-		<DBProvider>
-			<div className="flex justify-center w-auto min-h-screen font-[family-name:var(--font-geist-sans)]">
-				<Notes />
-			</div>
-		</DBProvider>
+		<div>
+			<p>Redirecting to /Notes</p>
+		</div>
 	);
 }

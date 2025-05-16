@@ -2,6 +2,8 @@
 import {FC} from "react";
 import {useRouter} from "next/navigation";
 
+import {formatDistance} from "date-fns";
+
 import {
 	Card,
 	CardContent,
@@ -19,14 +21,18 @@ const Note: FC<NoteType> = ({id, title, content, synced, updatedAt}) => {
 			onClick={() => router.push(`/notes/${id}`)}
 		>
 			<CardHeader className="flex flex-col gap-1">
-				<CardTitle>{title}</CardTitle>
+				<CardTitle className="capitalize">{title}</CardTitle>
 				<span className="text-slate-500">{synced ? "synced" : "unsynced"}</span>
 			</CardHeader>
 			<CardContent>
-				<p>{content}</p>
+				<p>{content.substring(0, 50)}...</p>
 			</CardContent>
 			<CardFooter>
-				<p className="text-slate-500 text-sm">{updatedAt}</p>
+				<p className="text-slate-500 text-sm">
+					{formatDistance(new Date(Number(updatedAt)), new Date(), {
+						addSuffix: true,
+					})}
+				</p>
 			</CardFooter>
 		</Card>
 	);

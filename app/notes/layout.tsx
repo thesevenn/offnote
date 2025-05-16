@@ -1,4 +1,7 @@
+"use client";
 import {DBProvider} from "@/contexts/db-context";
+import {SyncProvider} from "@/contexts/sync-context";
+import Header from "@/components/header";
 
 export default function NotesLayout({
 	children,
@@ -7,9 +10,12 @@ export default function NotesLayout({
 }>) {
 	return (
 		<DBProvider>
-			<div className="w-full flex items-center justify-center h-full bg-blue-500">
-				{children}
-			</div>
+			<SyncProvider>
+				<div className="w-full flex flex-col items-center justify-center">
+					<Header />
+					{children}
+				</div>
+			</SyncProvider>
 		</DBProvider>
 	);
 }

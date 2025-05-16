@@ -8,7 +8,9 @@ interface PropType extends HTMLAttributes<HTMLDivElement> {
 }
 const MaxWidthWrapper: FC<PropType> = ({className, children}) => {
 	return (
-		<div className={cn("max-w-[1100px] w-full", className)}>{children}</div>
+		<div className={cn("max-w-[1100px] h-auto w-full", className)}>
+			{children}
+		</div>
 	);
 };
 

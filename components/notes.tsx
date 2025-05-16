@@ -13,16 +13,16 @@ const Notes: FC = () => {
 	const [notes, setNotes] = useState<NoteType[]>([]);
 
 	useEffect(() => {
-		const getAllNotes = async () => {
+		const allNotes = async () => {
 			const response = await db?.getAll("notes");
-			console.log(response);
+
 			if (response) {
 				setNotes(response);
 			}
 		};
-		getAllNotes();
+		allNotes();
 	}, [db]);
-	console.log(notes);
+
 	return (
 		<MaxWidthWrapper>
 			<div className="w-full flex flex-wrap items-stretch gap-4 md:gap-6 p-5">

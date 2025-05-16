@@ -1,1 +1,53 @@
-{}
+{
+	"notes": [
+		{
+			"id": "a_SUZpAW",
+			"title": "Text tilte",
+			"content": "Hello more testing text",
+			"synced": true,
+			"updatedAt": "1747391000883"
+		},
+		{
+			"id": "h4XhgGuE",
+			"title": "new upated",
+			"content": "This is new note",
+			"synced": true,
+			"updatedAt": "1747390507483"
+		},
+		{
+			"id": "note-1",
+			"title": "Updated title",
+			"content": "Hello this is content updating",
+			"synced": true,
+			"updatedAt": "1747395961765"
+		},
+		{
+			"id": "mRD8GZC1",
+			"title": "hello",
+			"content": "Hello This is some text",
+			"synced": true,
+			"updatedAt": "1747396377846"
+		},
+		{
+			"id": "14pVRZnV",
+			"title": "Updated text",
+			"content": "Writing something here to check",
+			"synced": true,
+			"updatedAt": "1747396749159"
+		},
+		{
+			"id": "14pVRZnV",
+			"title": "Untitled",
+			"content": "",
+			"updatedAt": "1747396729659",
+			"synced": true
+		},
+		{
+			"id": "6CmBEztN",
+			"title": "value",
+			"content": "Hello",
+			"synced": true,
+			"updatedAt": "1747398982690"
+		}
+	]
+}

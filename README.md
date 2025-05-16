@@ -34,7 +34,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Mock API Setup
 
-For quick mock up `Json-Server` was used to mock API and database. To run json server -
+For quick mock up `json-server` was used to mock API and database. To run json server -
 
 ```bash
 npx json-server db.json
@@ -42,6 +42,9 @@ or
 npx json-server -p $PORT db.json
 # if default port 3000 is taken, where $PORT any other available PORT
 ```
+
+> [!Note]
+> Due to mocking API with `json-server`, the application cannot be directly hosted on Static platforms such as `Netlify` or `Vercel`.
 
 ## Limitations and Considerations
 

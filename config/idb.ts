@@ -1,25 +1,8 @@
-import {openDB, DBSchema} from "idb";
+import {openDB} from "idb";
 
-interface NoteType {
-	id: string;
-	title: string;
-	content: string;
-	updatedAt: string;
-	synced: boolean;
-}
+import type {Schema} from "@/types/store";
 
-interface Schema extends DBSchema {
-	notes: {
-		key: string;
-		value: NoteType;
-		indexes: {
-			"by-title": string;
-			"by-updatedAt": string;
-		};
-	};
-}
-
-const initializeDB = async () => {
+const initDB = async () => {
 	if (typeof window == undefined) {
 		return null;
 	}
@@ -36,4 +19,4 @@ const initializeDB = async () => {
 	return db;
 };
 
-export {initializeDB};
+export {initDB};

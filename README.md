@@ -1,36 +1,54 @@
+# OffNote
+
+A Simple Offline first Note taking application with Markdown support. OffNote supports auto save so that you never loose your work, even when you loose your network.
+
+## Screenshot
+
+![Notes Page](./public/demo.png)
+
+## Intallations and Setup
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
-
-First, run the development server:
+Get started by cloning the GitHub repo
 
 ```bash
-npm run dev
+git clone https://github.com/thesevenn/offnote.git
+cd offnote
+```
+
+To run the development server
+
+```bash
+pnpm run dev
 # or
 yarn dev
 # or
-pnpm dev
-# or
-bun dev
+npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Mock API Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+For quick mock up `Json-Server` was used to mock API and database. To run json server -
 
-## Learn More
+```bash
+npx json-server db.json
+or
+npx json-server -p $PORT db.json
+# if default port 3000 is taken, where $PORT any other available PORT
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Limitations and Considerations
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Many tradeoffs were selectively made to complete the Project. Some of the Tradeoffs and limitations are -
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- UI was built on the run without any figma mockup or guide
+- Diffs were not made and changes were completely updated with `PUT` to avoid complexity
+- Many client side validations and plugins for Markdown are not added due to lack of time
 
-## Deploy on Vercel
+## Possible Improvements
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- UI can be enhaned with more time
+- Currently sync data is flow is from IndexDB to Mock API, but on first load data can be fetched from API to store in IndexDB.

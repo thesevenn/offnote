@@ -52,3 +52,4 @@ Many tradeoffs were selectively made to complete the Project. Some of the Tradeo
 
 - UI can be enhaned with more time
 - Currently sync data is flow is from IndexDB to Mock API, but on first load data can be fetched from API to store in IndexDB.
+- Refactoring of code can be done at some placed

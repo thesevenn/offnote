@@ -15,6 +15,9 @@ Get started by cloning the GitHub repo
 ```bash
 git clone https://github.com/thesevenn/offnote.git
 cd offnote
+pnpm install
+# or
+npm install
 ```
 
 To run the development server

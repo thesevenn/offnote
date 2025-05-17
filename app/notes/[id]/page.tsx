@@ -63,7 +63,7 @@ const Page = () => {
 				}
 			}
 		};
-		const timer = setTimeout(saveToDB, 2000);
+		const timer = setTimeout(saveToDB, 500);
 
 		return () => clearTimeout(timer);
 	}, [title, content, db, noteID, isSaved, setIsChanged]);

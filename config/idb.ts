@@ -3,7 +3,7 @@ import {openDB} from "idb";
 import type {Schema} from "@/types/store";
 
 const initDB = async () => {
-	if (typeof window == undefined) {
+	if (typeof window == "undefined") {
 		return null;
 	}
 	const db = await openDB<Schema>("offnote-db", 1, {

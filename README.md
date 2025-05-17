@@ -53,6 +53,17 @@ Many tradeoffs were selectively made to complete the Project. Some of the Tradeo
 - UI was built on the run without any figma mockup or guide
 - Diffs were not made and changes were completely updated with `PUT` to avoid complexity
 - Many client side validations and plugins for Markdown are not added due to lack of time
+- Search feature was not added because it was not possible to achieve it in time and priority was given to more critical and important features first.
+
+```ts
+// Searching can be implemented as -
+const [searchPhrase, setSearchPhrase] = useState<string>("");
+{
+	notes
+		.filter(note => note.title.includes(searchPhrase))
+		.map(note => <Note {...note} key={note.id} />);
+}
+```
 
 ## Possible Improvements
 

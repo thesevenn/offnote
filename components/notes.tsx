@@ -8,7 +8,10 @@ import {useDB} from "@/contexts/db-context";
 import type {NoteType} from "@/types/store";
 import {Plus} from "lucide-react";
 
-const Notes: FC = () => {
+interface PropType {
+	searchPhrase: string;
+}
+const Notes: FC<PropType> = ({searchPhrase}) => {
 	const {db} = useDB();
 	const [notes, setNotes] = useState<NoteType[]>([]);
 
@@ -37,9 +40,11 @@ const Notes: FC = () => {
 					/>
 					<p className="text-sm text-slate-500">New Note</p>
 				</Link>
-				{notes.map((note: NoteType) => (
-					<Note key={note.id} {...note} />
-				))}
+				{notes
+					.filter(note => note.title.includes(searchPhrase))
+					.map((note: NoteType) => (
+						<Note key={note.id} {...note} />
+					))}
 			</div>
 		</MaxWidthWrapper>
 	);

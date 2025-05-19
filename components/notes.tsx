@@ -41,7 +41,9 @@ const Notes: FC<PropType> = ({searchPhrase}) => {
 					<p className="text-sm text-slate-500">New Note</p>
 				</Link>
 				{notes
-					.filter(note => note.title.includes(searchPhrase))
+					.filter(note =>
+						note.title.toLowerCase().includes(searchPhrase.toLowerCase())
+					)
 					.map((note: NoteType) => (
 						<Note key={note.id} {...note} />
 					))}

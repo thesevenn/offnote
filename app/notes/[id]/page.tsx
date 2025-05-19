@@ -15,13 +15,6 @@ import {Textarea} from "@/components/ui/textarea";
 import {Toggle} from "@/components/ui/toggle";
 import {Separator} from "@/components/ui/separator";
 
-const newNote: NoteType = {
-	title: "Untitled",
-	content: "",
-	updatedAt: Date.now().toString(),
-	synced: false,
-	id: nanoid(8),
-};
 const Page = () => {
 	const {id} = useParams();
 	const router = useRouter();
@@ -34,6 +27,14 @@ const Page = () => {
 	const [title, setTitle] = useState<string>("Untitled");
 	const [isSaved, setIsSaved] = useState<boolean>(true);
 	const [showPreview, setShowPreview] = useState<boolean>(true);
+
+	const newNote: NoteType = {
+	title: "Untitled",
+	content: "",
+	updatedAt: Date.now().toString(),
+	synced: false,
+	id: nanoid(8),
+        };
 
 	const deleteNote = async (id: string) => {
 		if (!db) return;

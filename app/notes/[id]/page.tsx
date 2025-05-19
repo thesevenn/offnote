@@ -28,14 +28,6 @@ const Page = () => {
 	const [isSaved, setIsSaved] = useState<boolean>(true);
 	const [showPreview, setShowPreview] = useState<boolean>(true);
 
-	const newNote: NoteType = {
-	title: "Untitled",
-	content: "",
-	updatedAt: Date.now().toString(),
-	synced: false,
-	id: nanoid(8),
-        };
-
 	const deleteNote = async (id: string) => {
 		if (!db) return;
 
@@ -75,6 +67,13 @@ const Page = () => {
 		}
 
 		if (id == "new") {
+			const newNote: NoteType = {
+				title: "Untitled",
+				content: "",
+				updatedAt: Date.now().toString(),
+				synced: false,
+				id: nanoid(8),
+			};
 			if (db) {
 				db.put("notes", newNote);
 				setNoteID(newNote.id);
